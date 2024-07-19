@@ -1,0 +1,22 @@
+[
+  {
+    "movieId": 1,
+    "title": "Avemgers: Infinity War",
+    "director": "Russo Brothers",
+    "studio": "Marvel Studios",
+    "movieCast": ["RDJ", "Chris Evans", "Scarlett Johansson"],
+    "releaseYear": 2018,
+    "poster": "guide_01",
+    "posterUrl": "url"
+  },
+  {
+    "movieId": 2,
+    "title": "Avemgers: Endgame",
+    "director": "Joe and Anthony Brothers",
+    "studio": "Marvel Studios",
+    "movieCast": ["RDJ", "Chris Evans", "Scarlett Johansson"],
+    "releaseYear": 2019,
+    "poster": "guide_01",
+    "posterUrl": "url"
+  }
+]
