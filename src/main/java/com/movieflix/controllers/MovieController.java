@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,10 +35,15 @@ public class MovieController {
 		this.movieService = movieService;
 	}
 
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PostMapping("/add-movie")
 	public ResponseEntity<MovieDto> addMovieHanler(@RequestPart MultipartFile file,
-					@RequestPart String movieDto) throws IOException{
-
+					@RequestPart String movieDto) throws IOException, EmptyFileException{
+			
+		if (file.isEmpty()) {
+			throw new EmptyFileException("File is empty! Please send another file!");
+		}
+		
 		MovieDto dto = convertToMovieDto(movieDto);
 		return new ResponseEntity<>(movieService.addMovie(dto, file), HttpStatus.CREATED);
 	}
