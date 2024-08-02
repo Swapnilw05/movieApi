@@ -20,7 +20,7 @@ import javax.crypto.SecretKey;
 @Service
 public class JwtService {
 
-	 private static final String SECRET_KEY = "nA7TRP_6qiojsGi46gdsZDxHepMMSLac5tr6tW5SihzLzNzy4UNkU_Ho1hnxzJbs";
+	 private static final String SECRET_KEY = "SECRET_KEY";
 
     // extract username from JWT
     public String extractUsername(String token) {
